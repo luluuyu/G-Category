@@ -13,7 +13,7 @@
 
 - (void)setupForDefaultNavigationController
 {
-    CSLog(@"");
+    NSLog(@"");
 }
 
 - (void)setupForDefaultModalNavigationcontrollerWithBackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller

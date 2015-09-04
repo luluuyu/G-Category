@@ -8,6 +8,9 @@
 #define GLabelTextSize          [UIFont systemFontOfSize:16]
 #define GLabelFontSize           16
 #define GLabelMaxWidth           300        // label 最大的宽度
+#define IS_iOS8OrLater ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+#define IS_iOS7orLater ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define IS_iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] < 8.0)
 
 #import "NSString+G.h"
 
