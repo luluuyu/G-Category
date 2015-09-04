@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 ChineseSkill. All rights reserved.
 //
 
-#import "UINavigationController+OTO.h"
+#import "UINavigationController+G.h"
 #import "UIImage+UIImage_G.h"
 
-@implementation UINavigationController (UINavigationController_OTO)
+@implementation UINavigationController (UINavigationController_G)
 
 - (void)setupForDefaultNavigationController
 {

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationController (UINavigationController_OTO)
+@interface UINavigationController (UINavigationController_G)
 
 - (void)setupForDefaultNavigationController;
 

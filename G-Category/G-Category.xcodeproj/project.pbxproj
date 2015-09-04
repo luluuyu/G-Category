@@ -10,7 +10,7 @@
 		8909DB301B998261002A682A /* UIView+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB2F1B998261002A682A /* UIView+G.m */; };
 		8909DB371B9992BB002A682A /* NSString+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB321B9992BB002A682A /* NSString+G.m */; };
 		8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */; };
-		8909DB391B9992BB002A682A /* UINavigationController+OTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB361B9992BB002A682A /* UINavigationController+OTO.m */; };
+		8909DB391B9992BB002A682A /* UINavigationController+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB361B9992BB002A682A /* UINavigationController+G.m */; };
 		8909DB3F1B999AF3002A682A /* G-Category.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 8909DB3C1B999AF3002A682A /* G-Category.podspec.json */; };
 		8909DB401B999AF3002A682A /* G-Category.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 8909DB3E1B999AF3002A682A /* G-Category.podspec.json */; };
 		899E7BCE1B997F44004E6B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BCD1B997F44004E6B40 /* main.m */; };
@@ -38,8 +38,8 @@
 		8909DB321B9992BB002A682A /* NSString+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+G.m"; sourceTree = "<group>"; };
 		8909DB331B9992BB002A682A /* UIImage+UIImage_G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImage_G.h"; sourceTree = "<group>"; };
 		8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_G.m"; sourceTree = "<group>"; };
-		8909DB351B9992BB002A682A /* UINavigationController+OTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+OTO.h"; sourceTree = "<group>"; };
-		8909DB361B9992BB002A682A /* UINavigationController+OTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+OTO.m"; sourceTree = "<group>"; };
+		8909DB351B9992BB002A682A /* UINavigationController+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+G.h"; sourceTree = "<group>"; };
+		8909DB361B9992BB002A682A /* UINavigationController+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+G.m"; sourceTree = "<group>"; };
 		8909DB3C1B999AF3002A682A /* G-Category.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "G-Category.podspec.json"; sourceTree = "<group>"; };
 		8909DB3E1B999AF3002A682A /* G-Category.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "G-Category.podspec.json"; sourceTree = "<group>"; };
 		899E7BC81B997F44004E6B40 /* G-Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Category.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +83,8 @@
 				8909DB321B9992BB002A682A /* NSString+G.m */,
 				8909DB331B9992BB002A682A /* UIImage+UIImage_G.h */,
 				8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */,
-				8909DB351B9992BB002A682A /* UINavigationController+OTO.h */,
-				8909DB361B9992BB002A682A /* UINavigationController+OTO.m */,
+				8909DB351B9992BB002A682A /* UINavigationController+G.h */,
+				8909DB361B9992BB002A682A /* UINavigationController+G.m */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8909DB391B9992BB002A682A /* UINavigationController+OTO.m in Sources */,
+				8909DB391B9992BB002A682A /* UINavigationController+G.m in Sources */,
 				8909DB301B998261002A682A /* UIView+G.m in Sources */,
 				8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */,
 				899E7BD41B997F44004E6B40 /* ViewController.m in Sources */,
