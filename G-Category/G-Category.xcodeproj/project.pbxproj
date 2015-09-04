@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8909DB301B998261002A682A /* UIView+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB2F1B998261002A682A /* UIView+G.m */; };
+		8909DB371B9992BB002A682A /* NSString+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB321B9992BB002A682A /* NSString+G.m */; };
+		8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */; };
+		8909DB391B9992BB002A682A /* UINavigationController+OTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB361B9992BB002A682A /* UINavigationController+OTO.m */; };
 		899E7BCE1B997F44004E6B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BCD1B997F44004E6B40 /* main.m */; };
 		899E7BD11B997F44004E6B40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BD01B997F44004E6B40 /* AppDelegate.m */; };
 		899E7BD41B997F44004E6B40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BD31B997F44004E6B40 /* ViewController.m */; };
@@ -29,6 +32,12 @@
 /* Begin PBXFileReference section */
 		8909DB2E1B998261002A682A /* UIView+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+G.h"; sourceTree = "<group>"; };
 		8909DB2F1B998261002A682A /* UIView+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+G.m"; sourceTree = "<group>"; };
+		8909DB311B9992BB002A682A /* NSString+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+G.h"; sourceTree = "<group>"; };
+		8909DB321B9992BB002A682A /* NSString+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+G.m"; sourceTree = "<group>"; };
+		8909DB331B9992BB002A682A /* UIImage+UIImage_G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImage_G.h"; sourceTree = "<group>"; };
+		8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_G.m"; sourceTree = "<group>"; };
+		8909DB351B9992BB002A682A /* UINavigationController+OTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+OTO.h"; sourceTree = "<group>"; };
+		8909DB361B9992BB002A682A /* UINavigationController+OTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+OTO.m"; sourceTree = "<group>"; };
 		899E7BC81B997F44004E6B40 /* G-Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Category.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		899E7BCC1B997F44004E6B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		899E7BCD1B997F44004E6B40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +75,12 @@
 			children = (
 				8909DB2E1B998261002A682A /* UIView+G.h */,
 				8909DB2F1B998261002A682A /* UIView+G.m */,
+				8909DB311B9992BB002A682A /* NSString+G.h */,
+				8909DB321B9992BB002A682A /* NSString+G.m */,
+				8909DB331B9992BB002A682A /* UIImage+UIImage_G.h */,
+				8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */,
+				8909DB351B9992BB002A682A /* UINavigationController+OTO.h */,
+				8909DB361B9992BB002A682A /* UINavigationController+OTO.m */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -228,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8909DB391B9992BB002A682A /* UINavigationController+OTO.m in Sources */,
 				8909DB301B998261002A682A /* UIView+G.m in Sources */,
+				8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */,
 				899E7BD41B997F44004E6B40 /* ViewController.m in Sources */,
 				899E7BD11B997F44004E6B40 /* AppDelegate.m in Sources */,
+				8909DB371B9992BB002A682A /* NSString+G.m in Sources */,
 				899E7BCE1B997F44004E6B40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
