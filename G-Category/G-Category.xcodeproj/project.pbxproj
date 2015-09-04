@@ -11,6 +11,8 @@
 		8909DB371B9992BB002A682A /* NSString+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB321B9992BB002A682A /* NSString+G.m */; };
 		8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */; };
 		8909DB391B9992BB002A682A /* UINavigationController+OTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB361B9992BB002A682A /* UINavigationController+OTO.m */; };
+		8909DB3F1B999AF3002A682A /* G-Category.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 8909DB3C1B999AF3002A682A /* G-Category.podspec.json */; };
+		8909DB401B999AF3002A682A /* G-Category.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 8909DB3E1B999AF3002A682A /* G-Category.podspec.json */; };
 		899E7BCE1B997F44004E6B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BCD1B997F44004E6B40 /* main.m */; };
 		899E7BD11B997F44004E6B40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BD01B997F44004E6B40 /* AppDelegate.m */; };
 		899E7BD41B997F44004E6B40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 899E7BD31B997F44004E6B40 /* ViewController.m */; };
@@ -38,6 +40,8 @@
 		8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_G.m"; sourceTree = "<group>"; };
 		8909DB351B9992BB002A682A /* UINavigationController+OTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+OTO.h"; sourceTree = "<group>"; };
 		8909DB361B9992BB002A682A /* UINavigationController+OTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+OTO.m"; sourceTree = "<group>"; };
+		8909DB3C1B999AF3002A682A /* G-Category.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "G-Category.podspec.json"; sourceTree = "<group>"; };
+		8909DB3E1B999AF3002A682A /* G-Category.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "G-Category.podspec.json"; sourceTree = "<group>"; };
 		899E7BC81B997F44004E6B40 /* G-Category.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Category.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		899E7BCC1B997F44004E6B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		899E7BCD1B997F44004E6B40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +89,31 @@
 			path = SRC;
 			sourceTree = "<group>";
 		};
+		8909DB3A1B999AF3002A682A /* G-Category */ = {
+			isa = PBXGroup;
+			children = (
+				8909DB3B1B999AF3002A682A /* 0.0.1 */,
+				8909DB3D1B999AF3002A682A /* 0.0.2 */,
+			);
+			path = "G-Category";
+			sourceTree = "<group>";
+		};
+		8909DB3B1B999AF3002A682A /* 0.0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				8909DB3C1B999AF3002A682A /* G-Category.podspec.json */,
+			);
+			path = 0.0.1;
+			sourceTree = "<group>";
+		};
+		8909DB3D1B999AF3002A682A /* 0.0.2 */ = {
+			isa = PBXGroup;
+			children = (
+				8909DB3E1B999AF3002A682A /* G-Category.podspec.json */,
+			);
+			path = 0.0.2;
+			sourceTree = "<group>";
+		};
 		899E7BBF1B997F44004E6B40 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +135,7 @@
 		899E7BCA1B997F44004E6B40 /* G-Category */ = {
 			isa = PBXGroup;
 			children = (
+				8909DB3A1B999AF3002A682A /* G-Category */,
 				8909DB2D1B99824D002A682A /* SRC */,
 				899E7BCF1B997F44004E6B40 /* AppDelegate.h */,
 				899E7BD01B997F44004E6B40 /* AppDelegate.m */,
@@ -224,6 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8909DB3F1B999AF3002A682A /* G-Category.podspec.json in Resources */,
+				8909DB401B999AF3002A682A /* G-Category.podspec.json in Resources */,
 				899E7BD71B997F44004E6B40 /* Main.storyboard in Resources */,
 				899E7BD91B997F44004E6B40 /* Images.xcassets in Resources */,
 			);
