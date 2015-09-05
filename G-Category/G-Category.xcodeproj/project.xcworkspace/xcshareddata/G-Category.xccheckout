@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B4EE63CB-D4F4-4A56-B344-421EF77AD154</string>
 	<key>IDESourceControlProjectName</key>
-	<string>G-Category</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0CE88F0504C97D47C4507072FB3CE96C7811907C</key>
 		<string>https://github.com/luluuyu/G-Category.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>G-Category/G-Category.xcodeproj</string>
+	<string>G-Category/G-Category.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0CE88F0504C97D47C4507072FB3CE96C7811907C</key>
