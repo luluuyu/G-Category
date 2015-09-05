@@ -12,8 +12,9 @@
 
 - (void)setupForDefaultNavigationController;
 
-- (void)setupForDefaultModalNavigationcontrollerWithBackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller;
+- (void)setupForDefaultModalNavigationcontrollerWithImage:(UIImage *)image BackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller;
 
+- (void)setupForDefaultPushNavigationcontrollerWithImage:(UIImage *)image BackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller;
 
 @end
 

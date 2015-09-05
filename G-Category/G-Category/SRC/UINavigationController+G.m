@@ -16,9 +16,24 @@
     NSLog(@"");
 }
 
-- (void)setupForDefaultModalNavigationcontrollerWithBackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller
+- (void)setupForDefaultModalNavigationcontrollerWithImage:(UIImage *)image BackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller
 {
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_page_close_black"] changeImageColor:[UIColor blackColor]] style:UIBarButtonItemStyleDone target:target action:action];
+    if (image == nil)
+    {
+        image = [[UIImage imageNamed:@"nav_page_close_black"] changeImageColor:[UIColor blackColor]];
+    }
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:target action:action];
+    self.navigationBar.tintColor = [UIColor blackColor];
+    controller.navigationItem.leftBarButtonItem = leftBarButton;
+}
+
+- (void)setupForDefaultPushNavigationcontrollerWithImage:(UIImage *)image BackTarget:(id)target action:(SEL)action controller:(UIViewController *)controller
+{
+    if (image == nil)
+    {
+        image = [UIImage imageNamed:@"nav_page_close_black"];
+    }
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:target action:action];
     self.navigationBar.tintColor = [UIColor blackColor];
     controller.navigationItem.leftBarButtonItem = leftBarButton;
 }

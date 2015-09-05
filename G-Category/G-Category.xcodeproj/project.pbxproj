@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40A0F2E81B9A9525000B0897 /* UIViewController+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A0F2E71B9A9525000B0897 /* UIViewController+G.m */; };
 		8909DB301B998261002A682A /* UIView+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB2F1B998261002A682A /* UIView+G.m */; };
 		8909DB371B9992BB002A682A /* NSString+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB321B9992BB002A682A /* NSString+G.m */; };
 		8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40A0F2E61B9A9525000B0897 /* UIViewController+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+G.h"; sourceTree = "<group>"; };
+		40A0F2E71B9A9525000B0897 /* UIViewController+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+G.m"; sourceTree = "<group>"; };
 		8909DB2E1B998261002A682A /* UIView+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+G.h"; sourceTree = "<group>"; };
 		8909DB2F1B998261002A682A /* UIView+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+G.m"; sourceTree = "<group>"; };
 		8909DB311B9992BB002A682A /* NSString+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+G.h"; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				8909DB341B9992BB002A682A /* UIImage+UIImage_G.m */,
 				8909DB351B9992BB002A682A /* UINavigationController+G.h */,
 				8909DB361B9992BB002A682A /* UINavigationController+G.m */,
+				40A0F2E61B9A9525000B0897 /* UIViewController+G.h */,
+				40A0F2E71B9A9525000B0897 /* UIViewController+G.m */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				899E7BD41B997F44004E6B40 /* ViewController.m in Sources */,
 				899E7BD11B997F44004E6B40 /* AppDelegate.m in Sources */,
 				8909DB371B9992BB002A682A /* NSString+G.m in Sources */,
+				40A0F2E81B9A9525000B0897 /* UIViewController+G.m in Sources */,
 				899E7BCE1B997F44004E6B40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
