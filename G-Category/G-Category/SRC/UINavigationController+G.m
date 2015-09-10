@@ -22,7 +22,7 @@
     {
         image = [[UIImage imageNamed:@"nav_page_close_black"] changeImageColor:[UIColor blackColor]];
     }
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:target action:action];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_page_close_black"] style:UIBarButtonItemStyleDone target:target action:action];
     self.navigationBar.tintColor = [UIColor blackColor];
     controller.navigationItem.leftBarButtonItem = leftBarButton;
 }

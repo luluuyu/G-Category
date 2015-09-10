@@ -54,4 +54,6 @@
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space;
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space Width:(CGFloat)width Height:(CGFloat)height;
 
+- (void)autoLayout_setCenterInSuperViewWithWidth:(float)width height:(float)height;
+
 @end

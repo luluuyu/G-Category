@@ -186,4 +186,16 @@
     }
 }
 
+- (void)autoLayout_setCenterInSuperViewWithWidth:(float)width height:(float)height
+{
+    NSLayoutConstraint *width_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:width];
+    NSLayoutConstraint *height_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:height];
+    [self addConstraints:@[width_constraint,height_constraint]];
+    
+    NSLayoutConstraint *top_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    NSLayoutConstraint *bottom_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    
+    [self.superview addConstraints:@[top_constraint,bottom_constraint]];
+}
+
 @end
