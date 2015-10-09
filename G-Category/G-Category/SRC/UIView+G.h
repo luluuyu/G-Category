@@ -56,4 +56,20 @@
 
 - (void)autoLayout_setCenterInSuperViewWithWidth:(float)width height:(float)height;
 
+- (NSLayoutConstraint *)topConstraint:(float)constraint toItem:(UIView *)item;
+- (NSLayoutConstraint *)bottomConstraint:(float)constraint toItem:(UIView *)item;
+- (NSLayoutConstraint *)leftConstraint:(float)constraint toItem:(UIView *)item;
+- (NSLayoutConstraint *)rightConstraint:(float)constraint toItem:(UIView *)item;
+
+- (NSLayoutConstraint *)widthConstraint:(float)constraint toItem:(UIView *)item;
+- (NSLayoutConstraint *)heightConstraint:(float)constraint toItem:(UIView *)item;
+
+- (NSLayoutConstraint *)widthConstraint:(float)constraint;
+- (NSLayoutConstraint *)heightConstraint:(float)constraint;
+- (NSLayoutConstraint *)verticalCenterInView:(UIView *)superView;
++ (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview;
++ (CGFloat)heightConstraintForView:(UIView *)view superview:(UIView *)superview;
+
+- (void)ContraintsFitSuperView:(UIView *)superView top:(float)top bottom:(float)bottom left:(float)left right:(float)right;
+
 @end

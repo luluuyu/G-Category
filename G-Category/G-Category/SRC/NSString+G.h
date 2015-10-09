@@ -14,6 +14,9 @@
 - (NSString *)URLEncodedString;
 - (NSString *)URLDecodedString;
 
++ (NSString *)URLEncodedString:(NSString *)string;
++ (NSString *)URLDecodedString:(NSString *)string;
+
 - (CGSize)sizeOfStringWithStringFontSize:(CGFloat)fontSize boundingRectWithWidth:(CGFloat)width height:(CGFloat)height
 ;
 
@@ -52,7 +55,7 @@
  *
  *  @return label的最小高度
  */
-- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size labelString:(NSString *)string maxHeight:(CGFloat)maxheight;
+- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size maxHeight:(CGFloat)maxheight;
 
 - (CGFloat)widthOfLabelWithLabelHeight:(CGFloat)height labelFontSize:(CGFloat)size labelString:(NSString *)string maxWidth:(CGFloat)maxWidth;
 
@@ -72,5 +75,7 @@
 - (NSDictionary *)dictionaryType;
 
 + (NSString *)deviceUIDString;
+
++ (NSString *)md5:(NSString *)str;
 
 @end

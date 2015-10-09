@@ -13,8 +13,18 @@
 #define IS_iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] < 8.0)
 
 #import "NSString+G.h"
+#import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (G) 
+@implementation NSString (G)
+
++ (NSString *)URLEncodedString:(NSString *)string
+{
+    return [string URLEncodedString];
+}
++ (NSString *)URLDecodedString:(NSString *)string
+{
+    return [string URLDecodedString];
+}
 
 - (CGSize)sizeOfStringWithStringFontSize:(CGFloat)fontSize boundingRectWithWidth:(CGFloat)width height:(CGFloat)height
 {
@@ -68,11 +78,11 @@
     return contSize;
 }
 
-- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size labelString:(NSString *)string maxHeight:(CGFloat)maxheight;
+- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size maxHeight:(CGFloat)maxheight
 {
     CGSize contSize;
     CGSize textMaxSize = CGSizeMake(width, maxheight);
-    contSize = [string sizeWithFont:[UIFont systemFontOfSize:size] maxSize:textMaxSize];
+    contSize = [self sizeWithFont:[UIFont systemFontOfSize:size] maxSize:textMaxSize];
     
     if (contSize.height > maxheight)
     {
@@ -235,6 +245,20 @@
                                                             CFSTR(""),
                                                             kCFStringEncodingUTF8));
     return result;
+}
+
++ (NSString *)md5:(NSString *)str
+{
+    const char *cStr = [str UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
 }
 
 @end

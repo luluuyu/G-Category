@@ -190,12 +190,121 @@
 {
     NSLayoutConstraint *width_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:width];
     NSLayoutConstraint *height_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:height];
-    [self addConstraints:@[width_constraint,height_constraint]];
+    [self.superview addConstraints:@[width_constraint,height_constraint]];
     
-    NSLayoutConstraint *top_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *bottom_constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    NSLayoutConstraint *center_constraintX = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    NSLayoutConstraint *center_constraintY = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
+
+    [self.superview addConstraints:@[center_constraintX,center_constraintY]];
+}
+
+- (NSLayoutConstraint *)topConstraint:(float)constraint toItem:(UIView *)item
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:item attribute:NSLayoutAttributeTop multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)bottomConstraint:(float)constraint toItem:(UIView *)item
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:item attribute:NSLayoutAttributeBottom multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)leftConstraint:(float)constraint toItem:(UIView *)item
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:item attribute:NSLayoutAttributeLeft multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)rightConstraint:(float)constraint toItem:(UIView *)item
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:item attribute:NSLayoutAttributeRight multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)widthConstraint:(float)constraint
+{
+    return [self widthConstraint:constraint toItem:nil];
+}
+- (NSLayoutConstraint *)heightConstraint:(float)constraint
+{
+    return [self heightConstraint:constraint toItem:nil];
+}
+
+- (NSLayoutConstraint *)widthConstraint:(float)constraint toItem:(UIView *)item
+{
+    NSLayoutAttribute attribute2;
+    if (item)
+    {
+        attribute2 = NSLayoutAttributeWidth;
+    }
+    else
+    {
+        attribute2 = NSLayoutAttributeNotAnAttribute;
+    }
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:item attribute:attribute2 multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)heightConstraint:(float)constraint toItem:(UIView *)item
+{
+    NSLayoutAttribute attribute2;
+    if (item)
+    {
+        attribute2 = NSLayoutAttributeHeight;
+    }
+    else
+    {
+        attribute2 = NSLayoutAttributeNotAnAttribute;
+    }
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:item attribute:attribute2 multiplier:1 constant:constraint];
+}
+
+- (NSLayoutConstraint *)verticalCenterInView:(UIView *)superView
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
+}
+
++ (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview
+{
+    for (NSLayoutConstraint *contraint in view.constraints)
+    {
+        if (contraint.firstItem == view && contraint.firstAttribute == NSLayoutAttributeWidth)
+        {
+            return contraint.constant;
+        }
+    }
+    for (NSLayoutConstraint *contraint in superview.constraints)
+    {
+        if (contraint.firstItem == view && contraint.firstAttribute == NSLayoutAttributeWidth)
+        {
+            return contraint.constant;
+        }
+    }
+    return 0;
+}
+
++ (CGFloat)heightConstraintForView:(UIView *)view superview:(UIView *)superview
+{
+    for (NSLayoutConstraint *contraint in view.constraints)
+    {
+        if (contraint.firstItem == view && contraint.firstAttribute == NSLayoutAttributeHeight)
+        {
+            return contraint.constant;
+        }
+    }
     
-    [self.superview addConstraints:@[top_constraint,bottom_constraint]];
+    for (NSLayoutConstraint *contraint in superview.constraints)
+    {
+        if (contraint.firstItem == view && contraint.firstAttribute == NSLayoutAttributeHeight)
+        {
+            return contraint.constant;
+        }
+    }
+    return 0;
+}
+
+- (void)ContraintsFitSuperView:(UIView *)superView top:(float)top bottom:(float)bottom left:(float)left right:(float)right
+{
+    if (superView)
+    {
+        [superView addConstraints:@[[self topConstraint:top toItem:superView],[self bottomConstraint:bottom toItem:superView],[self leftConstraint:left toItem:superView],[self rightConstraint:right toItem:superView]]];
+    }
 }
 
 @end
