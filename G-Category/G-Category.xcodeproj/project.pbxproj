@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401BE38A1BE3809900BC1934 /* CSFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 401BE3851BE3809900BC1934 /* CSFilePath.m */; };
+		401BE38B1BE3809900BC1934 /* CSFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 401BE3871BE3809900BC1934 /* CSFileTool.m */; };
+		401BE38C1BE3809900BC1934 /* CSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 401BE3891BE3809900BC1934 /* CSKeyChain.m */; };
 		40A0F2E81B9A9525000B0897 /* UIViewController+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A0F2E71B9A9525000B0897 /* UIViewController+G.m */; };
 		8909DB301B998261002A682A /* UIView+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB2F1B998261002A682A /* UIView+G.m */; };
 		8909DB371B9992BB002A682A /* NSString+G.m in Sources */ = {isa = PBXBuildFile; fileRef = 8909DB321B9992BB002A682A /* NSString+G.m */; };
@@ -34,6 +37,12 @@
 
 /* Begin PBXFileReference section */
 		401BE3781BE37BE100BC1934 /* CKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSingleton.h; sourceTree = "<group>"; };
+		401BE3841BE3809900BC1934 /* CSFilePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFilePath.h; sourceTree = "<group>"; };
+		401BE3851BE3809900BC1934 /* CSFilePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFilePath.m; sourceTree = "<group>"; };
+		401BE3861BE3809900BC1934 /* CSFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFileTool.h; sourceTree = "<group>"; };
+		401BE3871BE3809900BC1934 /* CSFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFileTool.m; sourceTree = "<group>"; };
+		401BE3881BE3809900BC1934 /* CSKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSKeyChain.h; sourceTree = "<group>"; };
+		401BE3891BE3809900BC1934 /* CSKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSKeyChain.m; sourceTree = "<group>"; };
 		40A0F2E61B9A9525000B0897 /* UIViewController+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+G.h"; sourceTree = "<group>"; };
 		40A0F2E71B9A9525000B0897 /* UIViewController+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+G.m"; sourceTree = "<group>"; };
 		8909DB2E1B998261002A682A /* UIView+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+G.h"; sourceTree = "<group>"; };
@@ -78,6 +87,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		401BE3831BE3809900BC1934 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				401BE3841BE3809900BC1934 /* CSFilePath.h */,
+				401BE3851BE3809900BC1934 /* CSFilePath.m */,
+				401BE3861BE3809900BC1934 /* CSFileTool.h */,
+				401BE3871BE3809900BC1934 /* CSFileTool.m */,
+				401BE3881BE3809900BC1934 /* CSKeyChain.h */,
+				401BE3891BE3809900BC1934 /* CSKeyChain.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		8909DB2D1B99824D002A682A /* SRC */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +114,7 @@
 				40A0F2E61B9A9525000B0897 /* UIViewController+G.h */,
 				40A0F2E71B9A9525000B0897 /* UIViewController+G.m */,
 				401BE3781BE37BE100BC1934 /* CKSingleton.h */,
+				401BE3831BE3809900BC1934 /* Other */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
@@ -282,12 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401BE38C1BE3809900BC1934 /* CSKeyChain.m in Sources */,
 				8909DB391B9992BB002A682A /* UINavigationController+G.m in Sources */,
+				401BE38B1BE3809900BC1934 /* CSFileTool.m in Sources */,
 				8909DB301B998261002A682A /* UIView+G.m in Sources */,
 				8909DB381B9992BB002A682A /* UIImage+UIImage_G.m in Sources */,
 				899E7BD41B997F44004E6B40 /* ViewController.m in Sources */,
 				899E7BD11B997F44004E6B40 /* AppDelegate.m in Sources */,
 				8909DB371B9992BB002A682A /* NSString+G.m in Sources */,
+				401BE38A1BE3809900BC1934 /* CSFilePath.m in Sources */,
 				40A0F2E81B9A9525000B0897 /* UIViewController+G.m in Sources */,
 				899E7BCE1B997F44004E6B40 /* main.m in Sources */,
 			);
