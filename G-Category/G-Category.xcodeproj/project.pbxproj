@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401BE3781BE37BE100BC1934 /* CKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSingleton.h; sourceTree = "<group>"; };
 		40A0F2E61B9A9525000B0897 /* UIViewController+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+G.h"; sourceTree = "<group>"; };
 		40A0F2E71B9A9525000B0897 /* UIViewController+G.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+G.m"; sourceTree = "<group>"; };
 		8909DB2E1B998261002A682A /* UIView+G.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+G.h"; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 				8909DB361B9992BB002A682A /* UINavigationController+G.m */,
 				40A0F2E61B9A9525000B0897 /* UIViewController+G.h */,
 				40A0F2E71B9A9525000B0897 /* UIViewController+G.m */,
+				401BE3781BE37BE100BC1934 /* CKSingleton.h */,
 			);
 			path = SRC;
 			sourceTree = "<group>";
