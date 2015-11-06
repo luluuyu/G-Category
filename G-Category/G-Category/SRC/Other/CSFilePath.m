@@ -13,7 +13,7 @@
 @interface CSFilePath ()
 
 @property (nonatomic, copy) NSString *cachesPath;
-@property (nonatomic, copy) NSString *appMP3DirectoryPath;
+@property (nonatomic, copy) NSString *appLibraryPrivateDocuments;
 @property (nonatomic, copy) NSString *appHomeDirectoryPath;
 
 @end
@@ -26,9 +26,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CSFilePath)
     return [[CSFilePath sharedCSFilePath] appHomeDirectoryPath];
 }
 
-+ (NSString *)appMP3DirectoryPath
++ (NSString *)appLibraryPrivateDocuments
 {
-    return [[CSFilePath sharedCSFilePath] appMP3DirectoryPath];
+    return [[CSFilePath sharedCSFilePath] appLibraryPrivateDocuments];
 }
 
 + (NSString *)cachesPath
@@ -49,14 +49,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CSFilePath)
 
 #pragma mark
 #pragma mark getters
-- (NSString *)appMP3DirectoryPath
+- (NSString *)appLibraryPrivateDocuments
 {
-    if (_appMP3DirectoryPath == nil)
+    if (_appLibraryPrivateDocuments == nil)
     {
-        _appMP3DirectoryPath = [NSString stringWithFormat:@"%@/Library/Private Documents/",NSHomeDirectory()];
-        [CSFilePath checkFileDirectoryAndCreateItsDirectoryIfNotExist:_appMP3DirectoryPath];
+        _appLibraryPrivateDocuments = [NSString stringWithFormat:@"%@/Library/Private Documents/",NSHomeDirectory()];
+        [CSFilePath checkFileDirectoryAndCreateItsDirectoryIfNotExist:_appLibraryPrivateDocuments];
     }
-    return _appMP3DirectoryPath;
+    return _appLibraryPrivateDocuments;
 }
 
 - (NSString *)appHomeDirectoryPath

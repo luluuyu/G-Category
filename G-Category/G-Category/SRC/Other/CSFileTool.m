@@ -81,7 +81,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CSFileTool)
 + (void)checkFolderAtDefaultPathAvailable:(NSString *)folderName
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *documentsDir     = [CSFilePath appMP3DirectoryPath];
+    NSString *documentsDir     = [CSFilePath appLibraryPrivateDocuments];
     NSString *Image            = [documentsDir stringByAppendingString:folderName];
     
     BOOL isDir = YES;

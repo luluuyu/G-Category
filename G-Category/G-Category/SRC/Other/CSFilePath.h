@@ -11,14 +11,11 @@
 
 @interface CSFilePath : NSObject
 
-
 + (CSFilePath *)sharedCSFilePath;
 
 + (NSString *)appHomeDirectoryPath;
-+ (NSString *)appMP3DirectoryPath;
++ (NSString *)appLibraryPrivateDocuments;
 + (NSString *)cachesPath;
-
-+ (UIImage *)chatImageWithImageName:(NSString *)imageName;
 
 + (BOOL)checkFileDirectoryAndCreateItsDirectoryIfNotExist:(NSString*)filePath;
 

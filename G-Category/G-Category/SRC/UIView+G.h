@@ -35,8 +35,11 @@
 
 - (void)setFrameWidth:(CGFloat)width animated:(BOOL)animated animateDuration:(CGFloat)duration;
 - (void)setFrameHeight:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration;
+- (void)setFrameWidth:(CGFloat)width height:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration;
+
 - (void)setFrameOriginX:(CGFloat)xP;
 - (void)setFrameOriginY:(CGFloat)yP;
+- (void)setFrameOriginX:(CGFloat)xP FrameOriginY:(CGFloat)yP;
 
 
 /**
@@ -51,6 +54,9 @@
  @param subviews 要设置的子视图
  */
 - (void)setSubviewVerticalCentralInSuperViewWithSubviews:(id)view space:(CGFloat)space;
+
+- (void)setCenterInSuperView;
+
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space;
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space Width:(CGFloat)width Height:(CGFloat)height;
 

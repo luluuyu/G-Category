@@ -73,6 +73,24 @@
     }
 }
 
+- (void)setFrameWidth:(CGFloat)width height:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration
+{
+    CGRect frame = self.frame;
+    frame.size.height = height;
+    frame.size.width = width;
+    if (animated) {
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.9f initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.frame = frame;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                // add other operation when animate finished..
+            }
+        }];
+    }else{
+        self.frame = frame;
+    }
+}
+
 - (void)setHorizontalCentralInSuperView
 {
     if (self.superview) {
@@ -119,6 +137,11 @@
     return self.frame.origin.y;
 }
 
+- (void)setFrameOriginX:(CGFloat)xP FrameOriginY:(CGFloat)yP
+{
+    self.frame = CGRectMake(xP, yP, self.frame.size.width, self.frame.size.height);
+}
+
 - (void)setSubviewHorizontalCentralInSuperViewWithSubviews:(id)view space:(CGFloat)space
 {
     if ([view isKindOfClass:[UIView class]])
@@ -147,6 +170,16 @@
     }
 }
 
+- (void)setCenterInSuperView
+{
+    if(self.superview){
+        CGRect frame = self.frame;
+        frame.origin.x = (self.superview.frame.size.width - self.frame.size.width) * 0.5;
+        frame.origin.y = (self.superview.frame.size.height - self.frame.size.height) * 0.5;
+        self.frame = frame;
+    }
+}
+
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)VSpace andHorizontalSpace:(CGFloat)HSpace
 {
     if ([view isKindOfClass:[UIView class]])
@@ -161,9 +194,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - layer.frame.size.width * HSpace,
-                                   self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
-                                   layer.frame.size.width,
-                                   layer.frame.size.height);
+                                 self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
+                                 layer.frame.size.width,
+                                 layer.frame.size.height);
     }
 }
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)VSpace andHorizontalSpace:(CGFloat)HSpace Width:(CGFloat)width Height:(CGFloat)height
@@ -180,9 +213,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - width * HSpace,
-                                   self.frame.size.height * VSpace - height * VSpace,
-                                   width,
-                                   height);
+                                 self.frame.size.height * VSpace - height * VSpace,
+                                 width,
+                                 height);
     }
 }
 
@@ -194,7 +227,7 @@
     
     NSLayoutConstraint *center_constraintX = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     NSLayoutConstraint *center_constraintY = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-
+    
     [self.superview addConstraints:@[center_constraintX,center_constraintY]];
 }
 
