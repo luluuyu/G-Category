@@ -142,6 +142,44 @@
     self.frame = CGRectMake(xP, yP, self.frame.size.width, self.frame.size.height);
 }
 
+- (void)setConstraintLeft:(CGFloat)constraintL constraintRight:(CGFloat)constraintR animated:(BOOL)animated duration:(CGFloat)duration options:(UIViewAnimationOptions)options
+{
+    NSLayoutConstraint *leftCons;
+    NSLayoutConstraint *rightCons;
+    for (NSLayoutConstraint *item in self.superview.constraints) {
+        if (item.firstItem == self && item.firstAttribute == NSLayoutAttributeLeft) {
+            leftCons = item;
+        }
+        if (item.firstItem == self && item.firstAttribute == NSLayoutAttributeRight) {
+            rightCons = item;
+        }
+        if (leftCons && rightCons) {
+            break;
+        }
+    }
+    if (animated == false) {
+        if (leftCons) {
+            leftCons.constant = constraintL;
+        }
+        if (rightCons) {
+            rightCons.constant = constraintR;
+        }
+        [self.superview layoutIfNeeded];
+    }else{
+        [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
+            if (leftCons) {
+                leftCons.constant = constraintL;
+            }
+            if (rightCons) {
+                rightCons.constant = constraintR;
+            }
+            [self.superview layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
 - (void)setSubviewHorizontalCentralInSuperViewWithSubviews:(id)view space:(CGFloat)space
 {
     if ([view isKindOfClass:[UIView class]])
@@ -194,9 +232,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - layer.frame.size.width * HSpace,
-                                 self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
-                                 layer.frame.size.width,
-                                 layer.frame.size.height);
+                                   self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
+                                   layer.frame.size.width,
+                                   layer.frame.size.height);
     }
 }
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)VSpace andHorizontalSpace:(CGFloat)HSpace Width:(CGFloat)width Height:(CGFloat)height
@@ -213,9 +251,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - width * HSpace,
-                                 self.frame.size.height * VSpace - height * VSpace,
-                                 width,
-                                 height);
+                                   self.frame.size.height * VSpace - height * VSpace,
+                                   width,
+                                   height);
     }
 }
 
@@ -227,7 +265,7 @@
     
     NSLayoutConstraint *center_constraintX = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     NSLayoutConstraint *center_constraintY = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-    
+
     [self.superview addConstraints:@[center_constraintX,center_constraintY]];
 }
 
@@ -292,7 +330,10 @@
 {
     return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
 }
-
+- (NSLayoutConstraint *)horizontalCenterInView:(UIView *)superView;
+{
+    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+}
 + (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview
 {
     for (NSLayoutConstraint *contraint in view.constraints)

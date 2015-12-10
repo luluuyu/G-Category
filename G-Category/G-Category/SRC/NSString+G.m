@@ -262,3 +262,42 @@
 }
 
 @end
+
+@implementation NSString (MySortAdditions)
+- (NSComparisonResult)CompareMyStringASC:(NSString*)aString
+{
+    return [self compare:aString];
+}
+- (NSComparisonResult)CompareMyStringDESC:(NSString*)aString
+{
+    return [aString compare:self];
+}
+- (NSComparisonResult)CompareMyStringToIntASC:(NSString*)aString
+{
+    NSComparisonResult ret =  NSOrderedSame;
+    if(self!=nil && self.length>0 && aString!=nil && aString.length>0)
+    {
+        int nFirst = [self intValue];
+        int second = [aString intValue];
+        
+        if(nFirst==second) ret =   NSOrderedSame;
+        if(nFirst<second) ret =  NSOrderedAscending;
+        if(nFirst>second) ret =  NSOrderedDescending;
+    }
+    return ret;
+}
+- (NSComparisonResult)CompareMyStringToIntDESC:(NSString*)aString
+{
+    NSComparisonResult ret =  NSOrderedSame;
+    if(self!=nil && self.length>0 && aString!=nil && aString.length>0)
+    {
+        int nFirst = [self intValue];
+        int second = [aString intValue];
+        
+        if(nFirst==second) ret =   NSOrderedSame;
+        if(nFirst>second) ret =  NSOrderedAscending;
+        if(nFirst<second) ret =  NSOrderedDescending;
+    }
+    return ret;
+}
+@end

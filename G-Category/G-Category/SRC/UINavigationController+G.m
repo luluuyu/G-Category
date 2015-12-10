@@ -31,7 +31,7 @@
 {
     if (image == nil)
     {
-        image = [UIImage imageNamed:@"nav_page_close_black"];
+        image = [UIImage imageNamed:@"nav_page_back_black"];
     }
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStyleDone target:target action:action];
     self.navigationBar.tintColor = [UIColor blackColor];

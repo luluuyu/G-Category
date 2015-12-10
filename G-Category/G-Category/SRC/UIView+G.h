@@ -41,6 +41,8 @@
 - (void)setFrameOriginY:(CGFloat)yP;
 - (void)setFrameOriginX:(CGFloat)xP FrameOriginY:(CGFloat)yP;
 
+- (void)setConstraintLeft:(CGFloat)constraintL constraintRight:(CGFloat)constraintR animated:(BOOL)animated duration:(CGFloat)duration options:(UIViewAnimationOptions)options;
+
 
 /**
  设置包含的子视图在父视图中水平方向居中
@@ -73,6 +75,7 @@
 - (NSLayoutConstraint *)widthConstraint:(float)constraint;
 - (NSLayoutConstraint *)heightConstraint:(float)constraint;
 - (NSLayoutConstraint *)verticalCenterInView:(UIView *)superView;
+- (NSLayoutConstraint *)horizontalCenterInView:(UIView *)superView;
 + (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview;
 + (CGFloat)heightConstraintForView:(UIView *)view superview:(UIView *)superview;
 

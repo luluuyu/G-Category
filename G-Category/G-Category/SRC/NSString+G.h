@@ -79,3 +79,12 @@
 + (NSString *)md5:(NSString *)str;
 
 @end
+
+@interface NSString (MySortAdditions)
+- (NSComparisonResult)CompareMyStringASC:(NSString*)aString;
+- (NSComparisonResult)CompareMyStringDESC:(NSString*)aString;
+- (NSComparisonResult)CompareMyStringToIntASC:(NSString*)aString;
+- (NSComparisonResult)CompareMyStringToIntDESC:(NSString*)aString;
+@end
+
+
