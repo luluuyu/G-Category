@@ -10,6 +10,7 @@
 
 @implementation UIView(G)
 
+
 + (CGRect)getCenterFrameWithWidth:(float)Width Height:(float)height SuperView:(UIView *)view
 {
     float x = (view.frame.size.width - Width) * 0.5;
