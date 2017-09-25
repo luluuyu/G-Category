@@ -14,7 +14,6 @@
 @property (nonatomic,strong) NSDictionary *all_CS_LessonDict;
 
 + (instancetype)sharedCSFileTool;
-- (NSString *)lessonNameForLessonId:(NSString *)lessonId;
 
 + (id)objectForKeyInUserDefaults:(NSString *)key;
 + (void)saveToUserDefaultsWithKey:(NSString *)key andObject:(id)obj;
