@@ -34,34 +34,6 @@
 
 - (BOOL)containsWithString:(NSString *)aString;
 
-
-/**
- *  返回字符串所占用的尺寸
- *
- *  @param font    字体
- *  @param maxSize 最大尺寸
- */
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
-/**
- *  计算给定文字的 size
- */
-- (CGSize)sizeOfString:(NSString *)string;
-
-/**
- *  计算给定label的高度
- *
- *  @param width  label的宽度
- *  @param string label的文字
- *
- *  @return label的最小高度
- */
-- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size maxHeight:(CGFloat)maxheight;
-
-- (CGFloat)widthOfLabelWithLabelHeight:(CGFloat)height labelFontSize:(CGFloat)size labelString:(NSString *)string maxWidth:(CGFloat)maxWidth;
-
-- (CGFloat)heightOfLabelWithLabel:(UILabel *)label LabelWidth:(CGFloat)width maxHeight:(CGFloat)maxheight;
-+ (CGFloat)heightOfLabelWithLabel:(UILabel *)label Text:(NSString *)text maxHeight:(CGFloat)maxheight;
-
 + (NSString *)NG_StringValue:(int)value;
 
 +(NSString *)jsonStringWithDictionary:(NSDictionary *)dictionary;

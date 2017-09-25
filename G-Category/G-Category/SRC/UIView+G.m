@@ -1,9 +1,9 @@
 //
 //  UIView+G.m
-//  ChineseSkillNew
+//  Forever Balabala Biu
 //
 //  Created by cslop on 14/12/23.
-//  Copyright (c) 2014年 ChineseSkill. All rights reserved.
+//  Copyright (c) 2014年 Forever Balabala Biu. All rights reserved.
 //
 
 #import "UIView+G.h"
@@ -73,24 +73,6 @@
     }
 }
 
-- (void)setFrameWidth:(CGFloat)width height:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration
-{
-    CGRect frame = self.frame;
-    frame.size.height = height;
-    frame.size.width = width;
-    if (animated) {
-        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.9f initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            self.frame = frame;
-        } completion:^(BOOL finished) {
-            if (finished) {
-                // add other operation when animate finished..
-            }
-        }];
-    }else{
-        self.frame = frame;
-    }
-}
-
 - (void)setHorizontalCentralInSuperView
 {
     if (self.superview) {
@@ -137,49 +119,6 @@
     return self.frame.origin.y;
 }
 
-- (void)setFrameOriginX:(CGFloat)xP FrameOriginY:(CGFloat)yP
-{
-    self.frame = CGRectMake(xP, yP, self.frame.size.width, self.frame.size.height);
-}
-
-- (void)setConstraintLeft:(CGFloat)constraintL constraintRight:(CGFloat)constraintR animated:(BOOL)animated duration:(CGFloat)duration options:(UIViewAnimationOptions)options
-{
-    NSLayoutConstraint *leftCons;
-    NSLayoutConstraint *rightCons;
-    for (NSLayoutConstraint *item in self.superview.constraints) {
-        if (item.firstItem == self && item.firstAttribute == NSLayoutAttributeLeft) {
-            leftCons = item;
-        }
-        if (item.firstItem == self && item.firstAttribute == NSLayoutAttributeRight) {
-            rightCons = item;
-        }
-        if (leftCons && rightCons) {
-            break;
-        }
-    }
-    if (animated == false) {
-        if (leftCons) {
-            leftCons.constant = constraintL;
-        }
-        if (rightCons) {
-            rightCons.constant = constraintR;
-        }
-        [self.superview layoutIfNeeded];
-    }else{
-        [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
-            if (leftCons) {
-                leftCons.constant = constraintL;
-            }
-            if (rightCons) {
-                rightCons.constant = constraintR;
-            }
-            [self.superview layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
-}
-
 - (void)setSubviewHorizontalCentralInSuperViewWithSubviews:(id)view space:(CGFloat)space
 {
     if ([view isKindOfClass:[UIView class]])
@@ -208,16 +147,6 @@
     }
 }
 
-- (void)setCenterInSuperView
-{
-    if(self.superview){
-        CGRect frame = self.frame;
-        frame.origin.x = (self.superview.frame.size.width - self.frame.size.width) * 0.5;
-        frame.origin.y = (self.superview.frame.size.height - self.frame.size.height) * 0.5;
-        self.frame = frame;
-    }
-}
-
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)VSpace andHorizontalSpace:(CGFloat)HSpace
 {
     if ([view isKindOfClass:[UIView class]])
@@ -232,9 +161,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - layer.frame.size.width * HSpace,
-                                   self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
-                                   layer.frame.size.width,
-                                   layer.frame.size.height);
+                                 self.frame.size.height * VSpace - layer.frame.size.height * VSpace,
+                                 layer.frame.size.width,
+                                 layer.frame.size.height);
     }
 }
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)VSpace andHorizontalSpace:(CGFloat)HSpace Width:(CGFloat)width Height:(CGFloat)height
@@ -251,9 +180,9 @@
     {
         CALayer *layer = (CALayer *)view;
         layer.frame = CGRectMake(self.frame.size.width * HSpace - width * HSpace,
-                                   self.frame.size.height * VSpace - height * VSpace,
-                                   width,
-                                   height);
+                                 self.frame.size.height * VSpace - height * VSpace,
+                                 width,
+                                 height);
     }
 }
 
@@ -265,7 +194,7 @@
     
     NSLayoutConstraint *center_constraintX = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     NSLayoutConstraint *center_constraintY = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual  toItem:self.superview attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-
+    
     [self.superview addConstraints:@[center_constraintX,center_constraintY]];
 }
 
@@ -330,10 +259,7 @@
 {
     return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
 }
-- (NSLayoutConstraint *)horizontalCenterInView:(UIView *)superView;
-{
-    return [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-}
+
 + (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview
 {
     for (NSLayoutConstraint *contraint in view.constraints)
@@ -381,4 +307,27 @@
     }
 }
 
+- (UIViewController *)superController
+{
+    UIView *next = [self superview];
+    while (next)
+    {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]){
+            return (UIViewController*)nextResponder;
+        }
+        next = next.superview;
+    }
+    return nil;
+}
+
+- (void)setRadius:(float)radius borderWidth:(float)borderWidth borderColor:(UIColor *)borderColor
+{
+    self.layer.cornerRadius = radius;
+    self.layer.borderWidth = borderWidth;
+    self.layer.borderColor = borderColor.CGColor;
+    self.layer.masksToBounds = true;
+}
+
 @end
+

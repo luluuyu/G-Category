@@ -1,15 +1,17 @@
 //
 //  UIView+G.h
-//  ChineseSkillNew
+//  Forever Balabala Biu
 //
 //  Created by cslop on 14/12/23.
-//  Copyright (c) 2014年 ChineseSkill. All rights reserved.
+//  Copyright (c) 2014年 Forever Balabala Biu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface UIView(G)
+
+- (UIViewController *)superController;
 
 + (CGRect)getCenterFrameWithWidth:(float)Width Height:(float)height SuperView:(UIView *)view;
 
@@ -35,13 +37,8 @@
 
 - (void)setFrameWidth:(CGFloat)width animated:(BOOL)animated animateDuration:(CGFloat)duration;
 - (void)setFrameHeight:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration;
-- (void)setFrameWidth:(CGFloat)width height:(CGFloat)height animated:(BOOL)animated animateDuration:(CGFloat)duration;
-
 - (void)setFrameOriginX:(CGFloat)xP;
 - (void)setFrameOriginY:(CGFloat)yP;
-- (void)setFrameOriginX:(CGFloat)xP FrameOriginY:(CGFloat)yP;
-
-- (void)setConstraintLeft:(CGFloat)constraintL constraintRight:(CGFloat)constraintR animated:(BOOL)animated duration:(CGFloat)duration options:(UIViewAnimationOptions)options;
 
 
 /**
@@ -56,9 +53,6 @@
  @param subviews 要设置的子视图
  */
 - (void)setSubviewVerticalCentralInSuperViewWithSubviews:(id)view space:(CGFloat)space;
-
-- (void)setCenterInSuperView;
-
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space;
 - (void)setSpaceInSuperViewWithSubview:(id)view VerticalCentralSpace:(CGFloat)Space andHorizontalSpace:(CGFloat)space Width:(CGFloat)width Height:(CGFloat)height;
 
@@ -75,10 +69,12 @@
 - (NSLayoutConstraint *)widthConstraint:(float)constraint;
 - (NSLayoutConstraint *)heightConstraint:(float)constraint;
 - (NSLayoutConstraint *)verticalCenterInView:(UIView *)superView;
-- (NSLayoutConstraint *)horizontalCenterInView:(UIView *)superView;
 + (CGFloat)widthConstraintForView:(UIView *)view superview:(UIView *)superview;
 + (CGFloat)heightConstraintForView:(UIView *)view superview:(UIView *)superview;
 
 - (void)ContraintsFitSuperView:(UIView *)superView top:(float)top bottom:(float)bottom left:(float)left right:(float)right;
 
+- (void)setRadius:(float)radius borderWidth:(float)borderWidth borderColor:(UIColor *)borderColor;
+
 @end
+

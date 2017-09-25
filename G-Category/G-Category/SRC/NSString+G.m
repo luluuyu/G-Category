@@ -57,83 +57,6 @@
     }
 }
 
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
-{
-    NSDictionary *attrs = @{NSFontAttributeName : font};
-    
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-    
-}
-
-- (CGSize)sizeOfString:(NSString *)string
-{
-    CGSize contSize;
-    if (IS_iOS7orLater) {
-        CGSize textMaxSize = CGSizeMake(GLabelMaxWidth, MAXFLOAT);
-        contSize = [string sizeWithFont:GLabelTextSize maxSize:textMaxSize];
-    }else{
-        CGSize textMaxSize = CGSizeMake(GLabelMaxWidth, MAXFLOAT);
-        contSize = [string sizeWithFont:GLabelTextSize constrainedToSize:textMaxSize lineBreakMode:0];
-    }
-    return contSize;
-}
-
-- (CGFloat)heightOfLabelWithLabelWidth:(CGFloat)width labelFontSize:(CGFloat)size maxHeight:(CGFloat)maxheight
-{
-    CGSize contSize;
-    CGSize textMaxSize = CGSizeMake(width, maxheight);
-    contSize = [self sizeWithFont:[UIFont systemFontOfSize:size] maxSize:textMaxSize];
-    
-    if (contSize.height > maxheight)
-    {
-        return maxheight;
-    }
-    
-    return contSize.height;
-}
-
-- (CGFloat)widthOfLabelWithLabelHeight:(CGFloat)height labelFontSize:(CGFloat)size labelString:(NSString *)string maxWidth:(CGFloat)maxWidth
-{
-    CGSize contSize;
-    CGSize textMaxSize = CGSizeMake(maxWidth, height);
-    contSize = [string sizeWithFont:[UIFont systemFontOfSize:size] maxSize:textMaxSize];
-    
-    if (contSize.height > maxWidth)
-    {
-        return maxWidth;
-    }
-    
-    return contSize.width;
-}
-
-- (CGFloat)heightOfLabelWithLabel:(UILabel *)label LabelWidth:(CGFloat)width maxHeight:(CGFloat)maxheight
-{
-    CGSize contSize;
-    CGSize textMaxSize = CGSizeMake(width, maxheight);
-    contSize = [label.text sizeWithFont:[label font] maxSize:textMaxSize];
-    
-    if (contSize.height > maxheight)
-    {
-        return maxheight;
-    }
-    
-    return contSize.height;
-}
-
-+ (CGFloat)heightOfLabelWithLabel:(UILabel *)label Text:(NSString *)text maxHeight:(CGFloat)maxheight
-{
-    CGSize contSize;
-    CGSize textMaxSize = CGSizeMake(label.frame.size.width, maxheight);
-    contSize = [text sizeWithFont:[label font] maxSize:textMaxSize];
-    
-    if (contSize.height > maxheight)
-    {
-        return maxheight;
-    }
-    
-    return contSize.height;
-}
-
 + (NSString *)NG_StringValue:(int)value
 {
     return [NSString stringWithFormat:@"%d",value];
@@ -251,7 +174,10 @@
 {
     const char *cStr = [str UTF8String];
     unsigned char result[16];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
     CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+#pragma clang diagnostic pop
     return [NSString stringWithFormat:
             @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0], result[1], result[2], result[3],
