@@ -120,13 +120,6 @@
 			path = SRC;
 			sourceTree = "<group>";
 		};
-		8909DB3A1B999AF3002A682A /* G-Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "G-Category";
-			sourceTree = "<group>";
-		};
 		899E7BBF1B997F44004E6B40 = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +141,6 @@
 		899E7BCA1B997F44004E6B40 /* G-Category */ = {
 			isa = PBXGroup;
 			children = (
-				8909DB3A1B999AF3002A682A /* G-Category */,
 				8909DB2D1B99824D002A682A /* SRC */,
 				899E7BCF1B997F44004E6B40 /* AppDelegate.h */,
 				899E7BD01B997F44004E6B40 /* AppDelegate.m */,
